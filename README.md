@@ -33,7 +33,6 @@ devtools::install_github("asiripanich/vista")
 
 ``` r
 library(vista)
-library(dm)
 vista_dm
 #> ── Metadata ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 #> Tables: `persons`, `households`, `trips`, `stops`, `jte`, `jtw`
@@ -43,6 +42,7 @@ vista_dm
 ```
 
 ``` r
+library(dm)
 vista_dm %>%
   dm_draw()
 ```

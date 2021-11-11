@@ -11,16 +11,6 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-
-knit_print.grViz <- function(x, ..., options) {
-  svg <- DiagrammeRsvg::export_svg(x)
-  path <- paste0(options$fig.path, options$label, ".svg")
-  writeLines(svg, path)
-  
-  knitr::asis_output(paste0('<img src="', path, '" />'))
-}
-
-vctrs::s3_register("knitr::knit_print", "grViz")
 ```
 
 # [vista](https://github.com/asiripanich/vista) 🚶‍♀️🚲🚗🚌
@@ -49,11 +39,11 @@ devtools::install_github("asiripanich/vista")
 
 ```{r screenshot.force = FALSE}
 library(vista)
-library(dm)
 vista_dm
 ```
 
 ``` r
+library(dm)
 vista_dm %>%
   dm_draw()
 ```
