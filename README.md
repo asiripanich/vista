@@ -14,8 +14,8 @@
     VISTA](https://transport.vic.gov.au/about/data-and-research/vista/vista-data-and-publications)
     as a relational data model in R, by leveraging on the
     [{dm}](https://cynkra.github.io/dm/) package.
-  - 🚧 (coming soon) Converts VISTA’s fields to match ABS Census
-    microdata, and vice versa.
+  - 🚧 (coming soon) Converts VISTA and 1% ABS Census Sample File to
+    CVISTA (C here stands for close-enough-to), an intermediate format.
 
 ☝️ If you have other versions of VISTA, you can use the `vista_to_dm()`
 function to convert your VISTA tables into a {dm} object.
@@ -34,7 +34,7 @@ devtools::install_github("asiripanich/vista")
 ``` r
 library(vista)
 vista_dm
-#> ── Metadata ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ───────────────────────────────────────────────────
 #> Tables: `persons`, `households`, `trips`, `stops`, `jte`, `jtw`
 #> Columns: 301
 #> Primary keys: 6
