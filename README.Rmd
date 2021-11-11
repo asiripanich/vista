@@ -11,21 +11,53 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+knit_print.grViz <- function(x, ..., options) {
+  svg <- DiagrammeRsvg::export_svg(x)
+  path <- paste0(options$fig.path, options$label, ".svg")
+  writeLines(svg, path)
+  
+  knitr::asis_output(paste0('<img src="', path, '" />'))
+}
+
+vctrs::s3_register("knitr::knit_print", "grViz")
 ```
 
-# vista
+# [vista](https://github.com/asiripanich/vista) 🚶‍♀️🚲🚗🚌
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/asiripanich/vista/workflows/R-CMD-check/badge.svg)](https://github.com/asiripanich/vista/actions)
 <!-- badges: end -->
 
-The goal of vista is to ...
+✨ **Features** ✨
+
+- [x] Offers `vista_dm`, a [public version of VISTA](https://transport.vic.gov.au/about/data-and-research/vista/vista-data-and-publications) as a relational data model in R, by leveraging on the [{dm}](https://cynkra.github.io/dm/) package.
+- [ ] Converts VISTA's fields to match ABS Census microdata, and vice versa.
+
+☝️ If you have other versions of VISTA, you can use the `vista_to_dm()` function to convert your VISTA tables into a {dm} object.
 
 ## Installation
 
-You can install the released version of vista from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of vista from GitHub with:
 
 ``` r
-# install.packages("vista")
+install.packages("devtools")
+devtools::install_github("asiripanich/vista")
 ```
 
 ## Example
+
+```{r screenshot.force = FALSE}
+library(vista)
+library(dm)
+vista_dm
+```
+
+``` r
+vista_dm %>%
+  dm_draw()
+```
+
+```{r, out.width="50%", echo=FALSE}
+knitr::include_graphics("man/figures/README-vista-dm-draw.png")
+```

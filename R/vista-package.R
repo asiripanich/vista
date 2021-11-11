@@ -1,4 +1,7 @@
 #' @keywords internal
+#' @importFrom dm dm
+#' @importFrom janitor clean_names
+#' @importFrom checkmate assert_data_frame
 "_PACKAGE"
 
 # The following block is used by usethis to automatically manage
