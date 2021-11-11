@@ -2,3 +2,17 @@ template:
   params:
     noindex: true
     bootswatch: readable
+
+reference:
+  - title: VISTA
+    contents:
+    - vista_to_dm
+    - vista_dm
+  - title: VISTA -> CVISTA <- Census
+    desc: Functions for creating a CVISTA or (Close-enough-to)VISTA format. 
+    contents:
+    - ends_with("to_cvista")
+    - starts_with("recode_")
+
+development:
+  mode: auto
