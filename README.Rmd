@@ -51,3 +51,14 @@ vista_dm %>%
 ```{r, out.width="50%", echo=FALSE}
 knitr::include_graphics("man/figures/README-vista-dm-draw.png")
 ```
+
+```{r}
+vista_persons_and_households <- vista_dm %>%
+            dm_select_tbl(persons, households) %>%
+            dm_squash_to_tbl(persons) %>%
+            collect() %>%
+            data.table::setDT()
+head(vista_persons_and_households)
+cvista <- vista_to_cvista(vista_persons_and_households)
+head(cvista)
+```
