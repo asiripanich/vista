@@ -1,6 +1,6 @@
 Package: vista
 Title: A VISTA data package.
-Version: 0.0.1
+Version: 0.0.1.9000
 Authors@R: 
     person(given = "First",
            family = "Last",
@@ -22,6 +22,8 @@ Imports:
     checkmate,
     janitor,
     dm,
-    magrittr
+    magrittr,
+    cli,
+    data.table
 Depends: 
     R (>= 2.10)
