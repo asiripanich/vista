@@ -1,3 +1,5 @@
-# vista 0.0.0.9000
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-* Added a `NEWS.md` file to track changes to the package.
+# vista 0.0.1
+
+* Added `vista_dm`, a relational data model of VISTA 2012-2018 public version.
