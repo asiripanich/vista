@@ -10,12 +10,12 @@
 
 ✨ **Features** ✨
 
-  - \[x\] Offers `vista_dm`, a [public version of
+  - Offers `vista_dm`, a [public version of
     VISTA](https://transport.vic.gov.au/about/data-and-research/vista/vista-data-and-publications)
     as a relational data model in R, by leveraging on the
     [{dm}](https://cynkra.github.io/dm/) package.
-  - \[ \] Converts VISTA’s fields to match ABS Census microdata, and
-    vice versa.
+  - 🚧 (coming soon) Converts VISTA’s fields to match ABS Census
+    microdata, and vice versa.
 
 ☝️ If you have other versions of VISTA, you can use the `vista_to_dm()`
 function to convert your VISTA tables into a {dm} object.
