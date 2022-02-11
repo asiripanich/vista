@@ -24,6 +24,7 @@ Imports:
     dm,
     magrittr,
     cli,
-    data.table
+    httr,
+    readxl
 Depends: 
     R (>= 2.10)

@@ -3,6 +3,17 @@
 \name{vista_to_dm}
 \alias{vista_to_dm}
 \title{Convert VISTA tables to a {dm} object.}
+\format{
+A \code{\link[dm:dm]{dm::dm()}} object containing 6 tables:
+\describe{
+\item{persons}{Person-level data - ID columns: persid(PK), hhid.}
+\item{households}{Household-level data - ID columns: hhid(PK).}
+\item{trips}{Trips - ID columns: tripid(PK), persid, hhid.}
+\item{stops}{Trips' stops - ID columns: persid(PK), hhid.}
+\item{jtw}{journey to work - ID columns: jtwid(PK), persid, hhid.}
+\item{jte}{journey to education - ID columns: jtwid(PK), persid, hhid.}
+}
+}
 \usage{
 vista_to_dm(persons, households, trips, stops, jte, jtw)
 }
@@ -26,4 +37,15 @@ with keys that link them.
 \description{
 This function turn tables from VISTA into a relational
 data model, a \code{\link[dm:dm]{dm::dm()}} object.
+}
+\examples{
+vista18 <- get_vista18()
+vista18_dm <- vista_to_dm(
+  persons = vista18$persons, 
+  households = vista18$households, 
+  trips = vista18$trips, 
+  stops = vista18$stops, 
+  jte = vista18$jte, 
+  jtw = vista18$jtw
+  )
 }

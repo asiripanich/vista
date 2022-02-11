@@ -14,7 +14,27 @@
 #'
 #' @return a [dm::dm()] object containing all the six tables
 #'  with keys that link them.
+#'
+#' @format A [dm::dm()] object containing 6 tables:
+#' \describe{
+#'   \item{persons}{Person-level data - ID columns: persid(PK), hhid.}
+#'   \item{households}{Household-level data - ID columns: hhid(PK).}
+#'   \item{trips}{Trips - ID columns: tripid(PK), persid, hhid.}
+#'   \item{stops}{Trips' stops - ID columns: persid(PK), hhid.}
+#'   \item{jtw}{journey to work - ID columns: jtwid(PK), persid, hhid.}
+#'   \item{jte}{journey to education - ID columns: jtwid(PK), persid, hhid.}
+#' }
 #' @export
+#' @examples
+#' vista18 <- get_vista18()
+#' vista18_dm <- vista_to_dm(
+#'   persons = vista18$persons,
+#'   households = vista18$households,
+#'   trips = vista18$trips,
+#'   stops = vista18$stops,
+#'   jte = vista18$jte,
+#'   jtw = vista18$jtw
+#' )
 vista_to_dm <- function(persons, households, trips, stops, jte, jtw) {
   persons <- assert_data_frame(persons) %>% janitor::clean_names()
   households <- assert_data_frame(households) %>% janitor::clean_names()

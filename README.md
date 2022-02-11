@@ -10,11 +10,11 @@
 
 ✨ **Features** ✨
 
-  - Offers `vista_dm`, a [public version of
+-   Offers `vista_dm`, a [public version of
     VISTA](https://transport.vic.gov.au/about/data-and-research/vista/vista-data-and-publications)
     as a relational data model in R, by leveraging on the
     [{dm}](https://cynkra.github.io/dm/) package.
-  - 🚧 (coming soon) Converts VISTA and 1% ABS Census Sample File to
+-   🚧 (coming soon) Converts VISTA and 1% ABS Census Sample File to
     CVISTA (C here stands for close-enough-to), an intermediate format.
 
 ☝️ If you have other versions of VISTA, you can use the `vista_to_dm()`
@@ -33,17 +33,20 @@ devtools::install_github("asiripanich/vista")
 
 ``` r
 library(vista)
-vista_dm
-#> ── Metadata ───────────────────────────────────────────────────
-#> Tables: `persons`, `households`, `trips`, `stops`, `jte`, `jtw`
-#> Columns: 301
-#> Primary keys: 6
-#> Foreign keys: 5
+vista18 <- get_vista18()
+vista18_dm <- vista_to_dm(
+  persons = vista18$persons,
+  households = vista18$households,
+  trips = vista18$trips,
+  stops = vista18$stops,
+  jte = vista18$jte,
+  jtw = vista18$jtw
+)
 ```
 
 ``` r
 library(dm)
-vista_dm %>%
+vista18_dm %>%
   dm_draw()
 ```
 

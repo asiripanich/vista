@@ -1,5 +1,5 @@
 #' @keywords internal
-#' @importFrom dm dm
+#' @importFrom dm dm dm_add_pk dm_add_fk
 #' @importFrom janitor clean_names
 #' @importFrom checkmate assert_data_frame
 "_PACKAGE"

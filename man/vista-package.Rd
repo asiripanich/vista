@@ -6,7 +6,7 @@
 \alias{vista-package}
 \title{vista: A VISTA data package.}
 \description{
-Make working with "Victorian Integrated Survey of Travel and Activity"  dataset a little easier.
+Make working with "Victorian Integrated Survey of Travel and Activity" dataset a little easier.
 }
 \author{
 \strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})

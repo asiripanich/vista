@@ -37,14 +37,22 @@ devtools::install_github("asiripanich/vista")
 
 ## Example
 
-```{r screenshot.force = FALSE}
+```{r screenshot.force = FALSE, warning=FALSE}
 library(vista)
-vista_dm
+vista18 <- get_vista18()
+vista18_dm <- vista_to_dm(
+  persons = vista18$persons,
+  households = vista18$households,
+  trips = vista18$trips,
+  stops = vista18$stops,
+  jte = vista18$jte,
+  jtw = vista18$jtw
+)
 ```
 
 ``` r
 library(dm)
-vista_dm %>%
+vista18_dm %>%
   dm_draw()
 ```
 
